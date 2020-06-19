@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.HomeActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGuideline_homeActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02" />
+
+    <TextView
+            android:id="@+id/txt_title_homeActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp30"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/find_your_house"
+            android:textAlignment="center"
+            android:textColor="@color/gray14"
+            android:textSize="@dimen/sp24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topGuideline_homeActivity" />
+
+    <TextView
+            android:id="@+id/txt_results_homeActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp30"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/results_in_area"
+            android:textAlignment="center"
+            android:textColor="@color/charcoal"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title_homeActivity" />
+
+    <!--  Search Image View  -->
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp18"
+            android:src="@drawable/ic_search_charcoal_24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_filterFunner_homeActivity"
+            app:layout_constraintRight_toLeftOf="@+id/img_filterFunner_homeActivity"
+            app:layout_constraintTop_toTopOf="@+id/img_filterFunner_homeActivity" />
+
+    <!--  Filter Image View -->
+    <ImageView
+            android:id="@+id/img_filterFunner_homeActivity"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="@dimen/dp26"
+            android:padding="3dp"
+            android:src="@drawable/ic_filter_funnel"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_title_homeActivity"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_title_homeActivity" />
+
+    <!--   Popular Listings -->
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_results_homeActivity">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/txt_popular_homeActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/popular"
+                    android:textAlignment="center"
+                    android:textColor="@color/charcoal"
+                    android:textSize="@dimen/sp18" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_popular_homeActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/dp5"
+                    android:paddingEnd="@dimen/dp5" />
+
+            <TextView
+                    android:id="@+id/txt_allProperties_homeActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/allProperties"
+                    android:textAlignment="center"
+                    android:textColor="@color/charcoal"
+                    android:textSize="@dimen/sp18" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_allProperties_homeActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
